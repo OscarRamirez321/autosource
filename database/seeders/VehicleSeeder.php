@@ -1,0 +1,196 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+use App\Models\Vehicle;
+use Illuminate\Support\Str;
+
+class VehicleSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+          $this->call(VehicleSeeder::class);
+        // Limpiar tabla antes de sembrar (opcional, útil en desarrollo para empezar limpio)
+        Vehicle::truncate();
+
+        $vehicles = [
+            [
+                'make' => 'Toyota',
+                'model' => 'Camry',
+                'year' => 2022,
+                'trim' => 'SE',
+                'vin' => '12345ABCDE67890FGH',
+                'description' => 'Un sedán fiable y eficiente, perfecto para el uso diario. Con bajo kilometraje y excelentes características de seguridad. Ideal para la vida urbana y viajes largos por carretera en Bradenton.',
+                'color_exterior' => 'Blanco Perla',
+                'color_interior' => 'Negro',
+                'engine' => '2.5L 4-Cylinder',
+                'transmission' => 'Automática',
+                'fuel_type' => 'Gasolina',
+                'mileage' => 15000,
+                'price' => 28500.00,
+                'image_path' => 'vehicles/camry-2022.jpg',
+                'gallery_images' => json_encode(['vehicles/camry-2022-int.jpg', 'vehicles/camry-2022-rear.jpg', 'vehicles/camry-2022-side.jpg']),
+                'body_type' => 'Sedan',
+                'drivetrain' => 'FWD',
+                'cylinders' => 4,
+                'engine_size_liters' => 2.5,
+            ],
+            [
+                'make' => 'Honda',
+                'model' => 'CR-V',
+                'year' => 2023,
+                'trim' => 'EX-L',
+                'vin' => 'ABCDE12345FGH67890',
+                'description' => 'SUV espacioso y cómodo, ideal para familias. Equipado con lo último en tecnología y seguridad. Excelente para aventuras y el transporte diario en Florida.',
+                'color_exterior' => 'Gris Metálico',
+                'color_interior' => 'Gris',
+                'engine' => '1.5L Turbo 4-Cylinder',
+                'transmission' => 'CVT',
+                'fuel_type' => 'Gasolina',
+                'mileage' => 8000,
+                'price' => 35000.00,
+                'image_path' => 'vehicles/crv-2023.jpg',
+                'gallery_images' => json_encode(['vehicles/crv-2023-int.jpg', 'vehicles/crv-2023-front.jpg', 'vehicles/crv-2023-side.jpg']),
+                'body_type' => 'SUV',
+                'drivetrain' => 'AWD',
+                'cylinders' => 4,
+                'engine_size_liters' => 1.5,
+            ],
+            [
+                'make' => 'Ford',
+                'model' => 'F-150',
+                'year' => 2021,
+                'trim' => 'Lariat',
+                'vin' => 'FGH67890ABCDE12345',
+                'description' => 'Camioneta robusta y potente, lista para cualquier trabajo o aventura. Edición Lariat con interiores de lujo y una capacidad de remolque impresionante para Bradenton.',
+                'color_exterior' => 'Negro Azabache',
+                'color_interior' => 'Cuero Negro',
+                'engine' => '3.5L V6 EcoBoost',
+                'transmission' => 'Automática 10 velocidades',
+                'fuel_type' => 'Gasolina',
+                'mileage' => 30000,
+                'price' => 48000.00,
+                'image_path' => 'vehicles/f150-2021.jpg',
+                'gallery_images' => json_encode(['vehicles/f150-2021-bed.jpg', 'vehicles/f150-2021-wheel.jpg', 'vehicles/f150-2021-int.jpg']),
+                'body_type' => 'Truck',
+                'drivetrain' => '4WD',
+                'cylinders' => 6,
+                'engine_size_liters' => 3.5,
+            ],
+            [
+                'make' => 'Tesla',
+                'model' => 'Model 3',
+                'year' => 2024,
+                'trim' => 'Long Range',
+                'vin' => 'TESLA12345ABCDEFGH',
+                'description' => 'Vehículo eléctrico de alta tecnología con gran autonomía y rendimiento impresionante. Actualizaciones de software gratuitas y un interior minimalista y futurista, ideal para el estilo de vida de Florida.',
+                'color_exterior' => 'Azul Profundo',
+                'color_interior' => 'Blanco Premium',
+                'engine' => 'Eléctrico',
+                'transmission' => 'Automática (EV)',
+                'fuel_type' => 'Eléctrico',
+                'mileage' => 2000,
+                'price' => 55000.00,
+                'image_path' => 'vehicles/model3-2024.jpg',
+                'gallery_images' => json_encode(['vehicles/model3-2024-charging.jpg', 'vehicles/model3-2024-dashboard.jpg', 'vehicles/model3-2024-rear.jpg']),
+                'body_type' => 'Sedan',
+                'drivetrain' => 'AWD',
+                'cylinders' => null, // N/A para EV
+                'engine_size_liters' => null, // N/A para EV
+            ],
+            [
+                'make' => 'Jeep',
+                'model' => 'Wrangler',
+                'year' => 2023,
+                'trim' => 'Rubicon',
+                'vin' => 'JEEP98765ZYXWVUTSR',
+                'description' => 'Icónico 4x4, perfecto para aventuras off-road. Totalmente equipado para los terrenos más difíciles con gran capacidad de personalización, listo para explorar los senderos de Florida.',
+                'color_exterior' => 'Verde Sarge',
+                'color_interior' => 'Negro',
+                'engine' => '3.6L V6 Pentastar',
+                'transmission' => 'Automática 8 velocidades',
+                'fuel_type' => 'Gasolina',
+                'mileage' => 12000,
+                'price' => 45000.00,
+                'image_path' => 'vehicles/wrangler-2023.jpg',
+                'gallery_images' => json_encode(['vehicles/wrangler-2023-offroad.jpg', 'vehicles/wrangler-2023-top.jpg', 'vehicles/wrangler-2023-int.jpg']),
+                'body_type' => 'SUV',
+                'drivetrain' => '4WD',
+                'cylinders' => 6,
+                'engine_size_liters' => 3.6,
+            ],
+            [
+                'make' => 'Mercedes-Benz',
+                'model' => 'C-Class',
+                'year' => 2022,
+                'trim' => 'C300',
+                'vin' => 'MERCBENZ98765ZYXWV',
+                'description' => 'Sedán de lujo con rendimiento deportivo y un interior exquisito. Ideal para quienes buscan elegancia y confort en las calles de Bradenton.',
+                'color_exterior' => 'Gris Selenita Metálico',
+                'color_interior' => 'Cuero Beige',
+                'engine' => '2.0L Turbo I4',
+                'transmission' => 'Automática 9G-TRONIC',
+                'fuel_type' => 'Gasolina',
+                'mileage' => 18000,
+                'price' => 42000.00,
+                'image_path' => 'vehicles/mercedes-c300-2022.jpg',
+                'gallery_images' => json_encode(['vehicles/mercedes-c300-2022-int.jpg', 'vehicles/mercedes-c300-2022-rear.jpg']),
+                'body_type' => 'Sedan',
+                'drivetrain' => 'RWD',
+                'cylinders' => 4,
+                'engine_size_liters' => 2.0,
+            ],
+            [
+                'make' => 'BMW',
+                'model' => 'X5',
+                'year' => 2023,
+                'trim' => 'xDrive40i',
+                'vin' => 'BMWX57890FEDCBA987',
+                'description' => 'SUV de lujo con gran dinamismo de conducción y un interior de alta gama. Perfecto para viajes largos y la ciudad, combinando potencia y sofisticación.',
+                'color_exterior' => 'Negro Zafiro Metálico',
+                'color_interior' => 'Cuero Cognac',
+                'engine' => '3.0L Turbo I6',
+                'transmission' => 'Automática 8 velocidades',
+                'fuel_type' => 'Gasolina',
+                'mileage' => 9500,
+                'price' => 62000.00,
+                'image_path' => 'vehicles/bmw-x5-2023.jpg',
+                'gallery_images' => json_encode(['vehicles/bmw-x5-2023-int.jpg', 'vehicles/bmw-x5-2023-front.jpg']),
+                'body_type' => 'SUV',
+                'drivetrain' => 'AWD',
+                'cylinders' => 6,
+                'engine_size_liters' => 3.0,
+            ],
+            [
+                'make' => 'Audi',
+                'model' => 'A4',
+                'year' => 2022,
+                'trim' => 'Premium Plus',
+                'vin' => 'AUDIA41234567890ABCD',
+                'description' => 'Sedán deportivo y elegante con tecnología avanzada y una experiencia de conducción refinada. Ideal para el día a día y viajes por la costa de Florida.',
+                'color_exterior' => 'Gris Daytona Perla',
+                'color_interior' => 'Cuero Negro',
+                'engine' => '2.0L Turbo I4',
+                'transmission' => 'S tronic 7 velocidades',
+                'fuel_type' => 'Gasolina',
+                'mileage' => 22000,
+                'price' => 38000.00,
+                'image_path' => 'vehicles/audi-a4-2022.jpg',
+                'gallery_images' => json_encode(['vehicles/audi-a4-2022-int.jpg', 'vehicles/audi-a4-2022-side.jpg']),
+                'body_type' => 'Sedan',
+                'drivetrain' => 'AWD',
+                'cylinders' => 4,
+                'engine_size_liters' => 2.0,
+            ],
+        ];
+
+        foreach ($vehicles as $vehicleData) {
+            Vehicle::create($vehicleData);
+        }
+    }
+}
